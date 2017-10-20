@@ -1,0 +1,18 @@
+Scrape NY Sport Club website
+Create a CLI interface
+-Ask the user for the prompt
+-include the class types
+-The prompt will ask the user what type of class they are interested in
+*time of the class
+-Will return the request
+-Ask if they want to see any additional classes
+-Exit
+Check to ensure the responses are correct
+Find the CSS/HTML identifiers for the prompt
+
+Gym Class information needed
+-Class name
+-Location
+-Time
+-Instructor
+-Description
