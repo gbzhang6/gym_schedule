@@ -14,6 +14,7 @@ class GymSchedule::CLI
     1. UXF - 41st & 3rd - 6:30 AM - 7:30 AM
     2. Advanced Barre - 41st & 3rd - 6:30 AM - 7:30 AM
     DOC
+    @gymclasses = GymSchedule::Schedule.Today
   end
 
   def class_time
