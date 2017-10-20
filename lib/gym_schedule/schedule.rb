@@ -1,6 +1,5 @@
 class GymSchedule::Schedule
   attr_accessor :name, :address, :class_time, :url
-  
 
   def self.today
     puts <<-DOC.gsub /^\s*/, ''
