@@ -10,11 +10,7 @@ class GymSchedule::CLI
 
   def list_classes
     puts "Today's Gym Schedule:"
-    puts <<-DOC.gsub /^\s*/, ''
-    1. UXF - 41st & 3rd - 6:30 AM - 7:30 AM
-    2. Advanced Barre - 41st & 3rd - 6:30 AM - 7:30 AM
-    DOC
-    @gymclasses = GymSchedule::Schedule.Today
+    @schedule = GymSchedule::Schedule.today
   end
 
   def class_time
