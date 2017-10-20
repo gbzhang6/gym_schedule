@@ -19,7 +19,7 @@ class GymSchedule::CLI
   def class_time
     input = nil
     while input != "exit"
-      puts "Type the number of the class you want more info on or type 'all' to see full list or type 'exit':"
+      puts "Type the number of the class you want more info on or type 'all' to see full list or type 'exit'."
       input = gets.strip.downcase
       case input
       when "all"
@@ -30,6 +30,8 @@ class GymSchedule::CLI
         puts "more info on class 2"
       when "3"
         puts "more info on class 3"
+      else
+        puts "That is not a valid response, please type 'all' or 'exit'."
       end
     end
   end
