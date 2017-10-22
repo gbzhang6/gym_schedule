@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
 
-require './lib/gym_schedule'
+require "bundler/setup"
+require "gym_schedule"
+
 GymSchedule::CLI.new.call

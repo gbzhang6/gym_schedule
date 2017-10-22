@@ -2,10 +2,10 @@ class GymSchedule::Schedule
   attr_accessor :name, :address, :class_time, :url
 
   def self.today
-    puts <<-DOC.gsub /^\s*/, ''
-    1. UXF - 41st & 3rd - 6:30 AM - 7:30 AM
-    2. Advanced Barre - 41st & 3rd - 6:30 AM - 7:30 AM
-    DOC
+    # puts <<-DOC.gsub /^\s*/, ''
+    # 1. UXF - 41st & 3rd - 6:30 AM - 7:30 AM
+    # 2. Advanced Barre - 41st & 3rd - 6:30 AM - 7:30 AM
+    # DOC
 
     gymclass_1 = self.new
     gymclass_1.name = "UXF"
