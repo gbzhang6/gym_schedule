@@ -26,7 +26,6 @@ class GymSchedule::CLI
         puts @schedule[input.to_i-1]
       elsif input == "all"
         list_classes
-        puts "more info on class 2"
       else
         puts "That is not a valid response, please type 'all' or 'exit'."
       end
