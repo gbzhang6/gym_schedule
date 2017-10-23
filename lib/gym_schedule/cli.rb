@@ -11,6 +11,9 @@ class GymSchedule::CLI
   def list_classes
     puts "Today's Gym Schedule:"
     @schedule = GymSchedule::Schedule.today
+    @schedule.each.with_index(1) do |gymclass, i|
+      puts "#{i}. #{gymclass.name} - #{gymclass.address} - #{gymclass.class_time}"
+    end
   end
 
   def class_time
@@ -18,18 +21,16 @@ class GymSchedule::CLI
     while input != "exit"
       puts "Type the number of the class you want more info on or type 'all' to see full list or type 'exit'."
       input = gets.strip.downcase
-      case input
-      when "all"
+
+      if input.to_i > 0
+        puts @schedule[input.to_i-1]
+      elsif input == "all"
         list_classes
-      when "1"
-        puts "more info on class 1"
-      when "2"
         puts "more info on class 2"
-      when "3"
-        puts "more info on class 3"
       else
         puts "That is not a valid response, please type 'all' or 'exit'."
       end
+
     end
   end
 
