@@ -22,6 +22,17 @@ class GymSchedule::Schedule
     doc.css(css).each do |name|
       puts name.text
     end
+
+    css = 'span.address'
+    doc.css(css).each do |address|
+      puts address.text
+    end
+
+    css = 'span.big'
+    doc.css(css).each do |class_time|
+      puts class_time.text
+    end
+
     binding.pry
   end
 
