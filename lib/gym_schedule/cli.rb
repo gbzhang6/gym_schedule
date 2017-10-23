@@ -23,7 +23,8 @@ class GymSchedule::CLI
       input = gets.strip.downcase
 
       if input.to_i > 0
-        puts @schedule[input.to_i-1]
+        today_schedule = @schedule[input.to_i-1]
+        puts "#{i}. #{today_schedule.name} - #{today_schedule.address} - #{today_schedule.class_time}"
       elsif input == "all"
         list_classes
       else
