@@ -13,9 +13,11 @@ class GymSchedule::CLI
     puts "Today's Gym Schedule:"
     @schedule = GymSchedule::Schedule.today
     @schedule.each.with_index(1) do |schedule, i|
-      puts "#{i}. #{schedule.name} - #{schedule.address} - #{schedule.class_time}"
+      # puts "#{i}. #{schedule.name} - #{schedule.address} - #{schedule.class_time}"
     end
     puts "Type the number of the class you want more info on or type 'exit'."
+    input = gets.strip.downcase
+
   end
 
   def class_time
