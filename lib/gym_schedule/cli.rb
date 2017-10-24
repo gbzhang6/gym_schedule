@@ -3,17 +3,19 @@
 class GymSchedule::CLI
 
   def call
-    list_classes
+    puts "Welcome to the New York Sports Club - Manhattan Classes."
+    list
     class_time
     goodbye
   end
 
-  def list_classes
+  def list
     puts "Today's Gym Schedule:"
     @schedule = GymSchedule::Schedule.today
-    @schedule.each.with_index(1) do |gymclass, i|
-      puts "#{i}. #{gymclass.name} - #{gymclass.address} - #{gymclass.class_time}"
+    @schedule.each.with_index(1) do |schedule, i|
+      puts "#{i}. #{schedule.name} - #{schedule.address} - #{schedule.class_time}"
     end
+    puts "Type the number of the class you want more info on or type 'exit'."
   end
 
   def class_time
@@ -26,7 +28,7 @@ class GymSchedule::CLI
         today_schedule = @schedule[input.to_i-1]
         puts "#{i}. #{today_schedule.name} - #{today_schedule.address} - #{today_schedule.class_time}"
       elsif input == "all"
-        list_classes
+        list
       else
         puts "That is not a valid response, please type 'all' or 'exit'."
       end
