@@ -25,11 +25,11 @@ class GymSchedule::Schedule
     gymclass.class_time = doc.css("span.big").text
   end
 
-  def self.scrape_nysc
-    scrape_gym_attributes.each do |g|
-      puts schedule
-    end
-  end
+  # def self.scrape_nysc
+  #   scrape_gym_attributes.each do |g|
+  #     puts schedule
+  #   end
+  # end
 
 
 
