@@ -33,10 +33,17 @@ class GymSchedule::CLI
         list
       end
     end
+  end
+
+  def print_info(num)
+    puts ""
+    puts "--------#{schedule.name} - #{schedule.address} - #{schedule.class_time}--------"
+    puts "Instructor: #{schedule.instructor}"
+    puts schedule.detail
+  end
 
   def goodbye
     puts "See you later, come back tomorrow for more gym classes!"
   end
-
 
 end
