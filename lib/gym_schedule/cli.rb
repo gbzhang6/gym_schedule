@@ -20,19 +20,19 @@ class GymSchedule::CLI
   def class_time
     input = nil
     while input != "exit"
+      puts "Enter the number for the class you would like more information on."
+      puts ""
+      puts "Enter exit to end the program."
       input = gets.strip.downcase
-
       if input.to_i > 0
-        today_schedule = @schedule[input.to_i-1]
-        puts "#{i}. #{today_schedule.name} - #{today_schedule.address} - #{today_schedule.class_time}"
-      elsif input == "all"
+        if num = GymSchedule::Schedule.find(input.to_i)
+          print_info(num)
+        end
+        puts "That is not a valid response, please type list or exit."
+      elsif list
         list
-      else
-        puts "That is not a valid response, please type 'all' or 'exit'."
       end
-
     end
-  end
 
   def goodbye
     puts "See you later, come back tomorrow for more gym classes!"
