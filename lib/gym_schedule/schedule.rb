@@ -1,18 +1,10 @@
 class GymSchedule::Schedule
-  attr_accessor :name, :address, :class_time, :url
+  attr_accessor :schedule, :name, :address, :class_time, :instructor, :print_info
 
-  def self.today
+  def self.all
     #scrape gym website and return the schedule for today based on the data
-    self.scrape_schedule
-  end
+    @@all ||= scrape_gym_attributes
 
-  def self.scrape_schedule
-    #go to the website and find the schedule for today
-    schedule = []
-
-    schedule << self.scrape_nysc
-
-    schedule
   end
 
   def get_page
@@ -20,16 +12,10 @@ class GymSchedule::Schedule
   end
 
   def scrape_gym_attributes
-    gymclass.name = doc.css("div.bigger").text
-    gymclass.address = doc.css("span.address").text
-    gymclass.class_time = doc.css("span.big").text
+    gymclass.name = doc.css("div.bigger").text.strip
+    gymclass.address = doc.css("span.address").text.strip
+    gymclass.class_time = doc.css("span.big").text.strip
   end
-
-  # def self.scrape_nysc
-  #   scrape_gym_attributes.each do |g|
-  #     puts schedule
-  #   end
-  # end
 
 
 
