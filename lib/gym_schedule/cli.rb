@@ -11,8 +11,8 @@ class GymSchedule::CLI
 
   def list
     puts "Today's Gym Schedule:"
-    GymSchedule::Schedule.all.each.with_index(1) do |schedule, i|
-      puts "#{i}. #{schedule.name} - #{schedule.address} - #{schedule.class_time}"
+    GymSchedule::Schedule.all.each.with_index(1) do |s, i|
+      puts "#{i}. #{s.name} - #{s.address} - #{s.class_time}"
     end
   end
 
