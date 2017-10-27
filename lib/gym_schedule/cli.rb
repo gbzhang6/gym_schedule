@@ -11,12 +11,13 @@ class GymSchedule::CLI
 
   def list
     puts "Today's Gym Schedule:"
-    GymSchedule::Schedule.all.each.with_index(1) do |s, i|
-      puts "#{i}. #{s.name} - #{s.address} - #{s.class_time}"
+    GymSchedule::Schedule.all.each.with_index(1) do |schedule, i|
+      puts "#{i}. #{schedule.name} - #{schedule.address} - #{schedule.gymclass_time}"
     end
+
   end
 
-  def class_time
+  def gymclass_time
     input = nil
     while input != "exit"
       puts "Enter the number for the class you would like more information on."
@@ -34,7 +35,7 @@ class GymSchedule::CLI
     end
   end
 
-  def print_info(num)
+  def print_info(schedule)
     puts ""
     puts "--------#{schedule.name} - #{schedule.address} - #{schedule.class_time}--------"
     puts "Instructor: #{schedule.instructor}"
