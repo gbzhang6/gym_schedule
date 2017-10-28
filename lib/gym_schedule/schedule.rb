@@ -5,9 +5,9 @@ class GymSchedule::Schedule
 
   def self.new_from_top_page(g)
     self.new(
-      g.css("a.bigger").text,
-      g.css("span.address").text,
-      g.css("span.big").text
+      g.css("a.bigger").text.strip,
+      g.css("span.address").text.strip,
+      g.css("div #cell.cell-head span.big").text.strip
     )
   end
 
@@ -22,5 +22,7 @@ class GymSchedule::Schedule
     #scrape gym website and return the schedule for today based on the data
     @@all
   end
+
+
 
 end

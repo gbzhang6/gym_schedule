@@ -5,7 +5,7 @@ class GymSchedule::Scraper
   end
 
   def scrape_gym_attributes
-    self.get_page.css("div.cell.cell-md-left").text.strip.gsub("\n","")
+    self.get_page.css("div.cell.cell-md-left")
   end
 
   def make_gymclasses
