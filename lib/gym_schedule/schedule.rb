@@ -1,9 +1,18 @@
 class GymSchedule::Schedule
   attr_accessor :schedule, :name, :address, :gymclass_time, :instructor, :print_info
 
+  @@all = []
+
+  def initialize(name=nil, address=nil, gymclass_time=nil)
+    @name = name
+    @address = address
+    @gymclass_time = gymclass_time
+    @@all << self
+  end
+
   def self.all
     #scrape gym website and return the schedule for today based on the data
-    @@all = scrape_gym_attributes
+    @@all << scrape_gym_attributes
 
   end
 
@@ -13,6 +22,4 @@ class GymSchedule::Schedule
     # address = doc.css("span.address").text.strip
     # gymclass_time = doc.css("span.big").text.strip
   end
-binding.pry
-
 end
