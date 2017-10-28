@@ -5,7 +5,7 @@ class GymSchedule::CLI
   def call
     puts "Welcome to the New York Sports Club - Manhattan Classes."
     list
-    class_time
+    gymclass_time
     goodbye
   end
 
