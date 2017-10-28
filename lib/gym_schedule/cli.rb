@@ -3,6 +3,7 @@
 class GymSchedule::CLI
 
   def call
+    GymSchedule::Scraper.new.make_gymclasses
     puts "Welcome to the New York Sports Club - Manhattan Classes."
     list
     gymclass_time

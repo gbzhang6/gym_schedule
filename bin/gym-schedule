@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-require "./lib/gym_schedule"
+require './lib/gym_schedule'
 
 
 GymSchedule::CLI.new.call
-GymSchedule::Schedule
