@@ -36,7 +36,7 @@ class GymSchedule::CLI
 
   def print_info(schedule)
     puts ""
-    puts "--------#{schedule.name} - #{schedule.address} - #{schedule.class_time}--------"
+    puts "--------#{schedule.name} - #{schedule.address} - #{schedule.gymclass_time}--------"
     puts "Instructor: #{schedule.instructor}"
     puts schedule.detail
   end

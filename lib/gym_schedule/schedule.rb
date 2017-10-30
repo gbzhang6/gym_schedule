@@ -29,14 +29,17 @@ class GymSchedule::Schedule
     self.all[num-1]
   end
 
-  def moreinfo
-    @moreinfo ||= Nokogiri::HTML(open(self.url))
+  def subpage
+    @subpage ||= Nokogiri::HTML(open(self.url))
   end
 
   def instructor
-    @instructor ||= moreinfo.xpath("h4 a").text
+    @instructor ||= subpage.xpath("h4 a").text
   end
 
+  def detail
+    @detail ||= subpage.xpath("div.section").text.strip
+  end
 
 
 end
