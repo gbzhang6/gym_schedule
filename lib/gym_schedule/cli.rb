@@ -21,9 +21,7 @@ class GymSchedule::CLI
   def gymclass_time
     input = nil
     while input != "exit"
-      puts "Enter the number for the class you would like more information on."
-      puts ""
-      puts "Enter exit to end the program."
+      puts "Enter the number for the class you would like more information on or exit."
       input = gets.strip.downcase
       if input.to_i > 0
         if num = GymSchedule::Schedule.find(input.to_i)
