@@ -22,10 +22,11 @@ class GymSchedule::CLI
     input = nil
     while input != "exit"
       puts "Enter the number for the class you would like more information on or exit."
-      input = gets.strip.downcase
+      input = gets.strip.to_i
+      binding.pry
       if input.to_i > 0
         if num = GymSchedule::Schedule.find(input.to_i)
-          print_info(num)
+          print_info(schedule)
         end
         puts "That is not a valid response, please type list or exit."
       elsif list
@@ -38,7 +39,7 @@ class GymSchedule::CLI
     puts ""
     puts "--------#{schedule.name} - #{schedule.address} - #{schedule.gymclass_time}--------"
     puts "Instructor: #{schedule.instructor}"
-    puts schedule.detail
+    puts "#{schedule.detail}"
   end
 
   def goodbye
